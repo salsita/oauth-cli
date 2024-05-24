@@ -1,0 +1,42 @@
+{
+  "name": "oauth-cli",
+  "version": "1.0.0",
+  "description": "Super simple generic CLI client that retrieves tokens through an OAuth flow.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/oauth.cjs --minify && chmod +x dist/oauth.cjs",
+    "prettify": "prettier --write ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "fastify": "^4.27.0",
+    "openid-client": "^5.6.5",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/yargs": "^17.0.32",
+    "esbuild": "^0.21.3",
+    "prettier": "^3.2.5",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/salsita/oauth-cli.git"
+  },
+  "keywords": [
+    "oauth",
+    "cli",
+    "client"
+  ],
+  "author": "Jiri Stanisevsky <jirist@salsitasoft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salsita/oauth-cli/issues"
+  },
+  "homepage": "https://github.com/salsita/oauth-cli#readme"
+}
