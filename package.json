@@ -1,6 +1,6 @@
 {
   "name": "oauth-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Super simple generic CLI client that retrieves tokens through an OAuth flow.",
   "main": "index.js",
   "type": "module",
