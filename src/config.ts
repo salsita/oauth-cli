@@ -11,6 +11,7 @@ export const config = cleanEnv(process.env, {
   CLIENT_SECRET: str(),
   REDIRECT_URI: str(),
   SCOPE: str(),
+  EXTRA_PARAMS: str({ default: undefined }),
 })
 
 if (

@@ -63,8 +63,11 @@ The client details obtained during registration of the client are expected to be
 - `CLIENT_ID`
 - `CLIENT_SECRET`
 - `REDIRECT_URI`
-  - This should be a `http://localhost[:<port>]` URL, as the CLI tool will start a local server to receive the callback.
+  - This should be a `http[s]://localhost[:<port>]` URL, as the CLI tool will start a local server to receive the callback.
   - The port for the callback server will be inferred from the URI and must be free at the time of execution.
   - The tool will warn if non-local URIs are used, but will still allow them in case of custom hosts overrides.
 - `SCOPE`
   - A space-separated list of scopes that the client requests authorization for.
+
+> **Note:** Listening on an HTTPS endpoint requires `cert.pem` and `key.pem` files next to the JS executable. Self-signed
+> certificates are provided by default. Bypass the warning in the browser to proceed.

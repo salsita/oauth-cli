@@ -1,19 +1,22 @@
-import Fastify from 'fastify'
+import { fastify } from 'fastify'
+import { SecureServerOptions } from 'http2'
 
-export const waitForCallback = (port: number, path: string) => {
+export const waitForCallback = (port: number, path: string, httpsOptions: SecureServerOptions | undefined) => {
   return new Promise<string>((resolve, reject) => {
-    const fastify = Fastify({
+    const server = fastify({
       logger: false,
+      // @ts-expect-error fastify types are wrong
+      https: httpsOptions,
     })
 
-    fastify.get(path, async (request, reply) => {
+    server.get(path, async (request, reply) => {
       const url = request.url
       reply.send('You can now close this tab')
-      await fastify.close()
+      await server.close()
       resolve(url)
     })
 
-    fastify.listen({ port }, err => {
+    server.listen({ port }, err => {
       if (err) {
         reject(err)
       }
