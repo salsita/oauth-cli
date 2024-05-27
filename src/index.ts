@@ -9,11 +9,11 @@ import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 
 const loadCerts = async (): Promise<SecureServerOptions> => {
-  const isCjs = !!global.require
+  const isCjs = !import.meta.resolve
   if (isCjs) {
     return {
-      cert: await readFile(global.require.resolve('./cert.pem')),
-      key: await readFile(global.require.resolve('./key.pem')),
+      cert: await readFile(require.resolve('./cert.pem')),
+      key: await readFile(require.resolve('./key.pem')),
     }
   } else {
     return {

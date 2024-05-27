@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/oauth.cjs --minify && chmod +x dist/oauth.cjs",
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/oauth.cjs '--external:*.pem' --minify && chmod +x dist/oauth.cjs",
     "prettify": "prettier --write ."
   },
   "dependencies": {
