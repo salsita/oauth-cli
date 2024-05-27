@@ -12,11 +12,11 @@ This is a simple CLI tool to get an OAuth tokens from a given OAuth2 provider.
 Just launch the tool with Node.js and follow the instructions:
 
 ```bash
-oauth.cjs > tokens.json
+node oauth.cjs > tokens.json
 ```
 
-> **Note:** The file contains a shebang and can be executed directly if the permissions are set correctly.
-> If not, please use node to explicitly: `node oauth.cjs > tokens.json`
+> **Note:** The file contains a shebang and can be executed directly without explicitly mentioning `node`
+> if the file permissions are set correctly.
 
 It will output a URL that you need to open in your browser. After you authenticate and authorize
 the application, you can close the browser and tokens should be saved into the designated file
@@ -26,7 +26,7 @@ If you intend to use the tokens in another application, you can output them as `
 passing the `env` format argument:
 
 ```bash
-oauth.cjs --format env > .env.tokens
+node oauth.cjs --format env > .env.tokens
 ```
 
 ## Configuration

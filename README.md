@@ -30,5 +30,5 @@ This will output a single executable JS file `dist/oauth.cjs`.
 You can then run it directly:
 
 ```bash
-dist/oauth.cjs
+node dist/oauth.cjs
 ```
